@@ -4,7 +4,7 @@ pipeline {
 
         stage ('SCM Checkout') {
            agent {
-              label 'slae1'
+              label 'slave1'
            }
             steps {
                 echo 'This is first step'
@@ -13,7 +13,7 @@ pipeline {
 
         stage ('Build') {
            agent {
-              label 'slave2'
+              label 'slave'
            }
             steps {
                 sh '''
