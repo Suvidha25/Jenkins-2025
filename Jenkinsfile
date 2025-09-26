@@ -1,16 +1,25 @@
 pipeline {
-    agent any 
+    agent none 
     stages {
-        stage ('Build') {
+
+        stage ('SCM Checkout') {
+           agent {
+              label 'slave1'
+           }
             steps {
-                echo 'Building'
+                echo 'This is first step'
             }
         }
-        stage ('Test') {
+
+        stage ('Build') {
+           agent {
+              label 'slave2'
+           }
             steps {
-                sh '
-                   pwd'
+                sh '''
+                   pwd
+                '''
             }
         }
     }
-}
+}  
