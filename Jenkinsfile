@@ -4,7 +4,7 @@ pipeline {
 
         stage ('SCM Checkout') {
            agent {
-              label 'slave1'
+              label 'slae1'
            }
             steps {
                 echo 'This is first step'
